@@ -5,7 +5,7 @@ import './index.css'
 function App() {
   const [data, setData] = useState(null)
   // 先用 VITE_API_URL，沒有才用 localhost
-  const API_BASE_URL = import.meta.env.VITE_API_URL;
+  const API_BASE_URL = 'http://crawler_app_backend.railway.internal:8080';
 
   const fetchData = (zone) => {
     fetch(`${API_BASE_URL}/SightAPI?zone=${zone}`)
