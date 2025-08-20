@@ -4,7 +4,8 @@ import './index.css'
 
 function App() {
   const [data, setData] = useState(null)
-  const API_BASE_URL = 'http://localhost:8080' || import.meta.env.VITE_API_URL
+  // 先用 VITE_API_URL，沒有才用 localhost
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
   const fetchData = (zone) => {
     fetch(`${API_BASE_URL}/SightAPI?zone=${zone}`)
