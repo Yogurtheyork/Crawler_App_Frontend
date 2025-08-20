@@ -4,9 +4,10 @@ import './index.css'
 
 function App() {
   const [data, setData] = useState(null)
+  const API_BASE_URL = 'http://localhost:8080' || import.meta.env.VITE_API_URL
 
   const fetchData = (zone) => {
-    fetch(`http://localhost:8080/SightAPI?zone=${zone}`)
+    fetch(`${API_BASE_URL}/SightAPI?zone=${zone}`)
       .then(res => res.json())
       .then(data => setData(data))
   }
